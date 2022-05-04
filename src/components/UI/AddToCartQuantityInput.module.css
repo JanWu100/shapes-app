@@ -1,0 +1,49 @@
+.amd{
+    margin: .3rem 0;
+    width: 100%;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content:center;
+
+}
+.input {
+    box-sizing: border-box;
+    border: none;
+    width: 40px;
+    outline: none;
+    font-size: 1rem;
+    background-color: transparent;
+    text-align: center;
+    font-weight: 900;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.increase {
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    cursor:pointer;
+    outline: none;
+    background: none;
+}
+.decrease {
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    cursor:pointer;
+
+    outline: none;
+    background: none;
+
+}
