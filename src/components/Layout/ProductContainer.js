@@ -1,12 +1,13 @@
 import classes from "./ProductContainer.module.css";
 import ProductForm from "../ProductPage/ProductForm";
+import ProductDisplay from "../ProductPage/ProductDisplay";
 
-const ProductContainer = () => {
+const ProductContainer = (props) => {
   return (
     <section className={classes["main-container"]}>
       <div className={classes.grid}>
-        <div className={classes["left-container"]}></div>
-       <ProductForm />
+        <ProductDisplay products={props.products}/>
+        <ProductForm products={props.products}/>
       </div>
     </section>
   );

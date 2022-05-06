@@ -1,8 +1,9 @@
 .amd{
-    margin: .3rem 0;
+    /* margin: .3rem 0; */
     width: 100%;
-    border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+    background-color: white;
+    /* background-color: rgba(0, 0, 0, 0.05); */
     display: flex;
     justify-content:center;
 

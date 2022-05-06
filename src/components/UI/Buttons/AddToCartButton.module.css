@@ -1,6 +1,5 @@
 .btn {
-    background-color: rgb(28, 28, 28);
-    box-sizing: border-box;
+    background: #BF4C4C;
     outline: none;
     border: none;
     color: white;
@@ -8,9 +7,12 @@
     padding: 1rem 0;
     width: 100%;
     border-radius: 25px;
-    margin: .3rem 0;
+    /* margin: .3rem 0; */
+    transition: background .3s;
+    cursor: pointer;
+
 }
 
 .btn:hover {
-    background-color: rgb(60, 60, 60);
+    background: #c37272;
 }

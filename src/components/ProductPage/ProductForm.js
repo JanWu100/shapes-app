@@ -1,9 +1,20 @@
 import classes from "./ProductForm.module.css";
-import AddToCartButton from "../UI/AddToCartButton";
-import AddToCartQuantityInput from "../UI/AddToCartQuantityInput";
-import AddToFavouritesButton from "../UI/AddToFavouritesButton";
+import { useState, useRef } from "react";
+import AddToCartButton from "../UI/Buttons/AddToCartButton";
+import AddToCartQuantityInput from "../UI/Buttons/AddToCartQuantityInput";
+import AddToFavouritesButton from "../UI/Buttons/AddToFavouritesButton";
+import ColorSelectionBadge from "./ColorSelectionBadge";
 
-const ProductForm = () => {
+const ProductForm = (props) => {
+  const availableColors = props.products[0].colors;
+  const [isPicked, setIsPicked] = useState("");
+
+  const onSelectedColorHandler = (selectedColor) => {
+    // myRef.current.value = selectedColor;
+    // console.log(myRef.current.value)
+    setIsPicked(selectedColor);
+  };
+
   return (
     <div className={classes["right-container"]}>
       <span className={classes["product-name"]}>Nowy produkt ze uhuhu 120</span>
@@ -13,13 +24,26 @@ const ProductForm = () => {
       </p>
       <div>
         <span className={classes["product-price"]}>$234</span>
-        <span>50%</span>
+        <span> 50%</span>
       </div>
       <div className={classes["colors-container"]}>
-        <div className={classes.color}>RED</div>
-        <div className={classes.color}>BLUE</div>
-        <div className={classes.color}>GREEN</div>
-
+        {availableColors.map((color, index) => {
+          return (
+            <ColorSelectionBadge
+              selected={isPicked}
+              selectedColor={onSelectedColorHandler}
+              id={index}
+              key={color}
+              className={`${classes.badge} ${
+                isPicked === index.toString()
+                  ? classes.selected
+                  : classes.notselected
+              }  `}
+            >
+              {color}
+            </ColorSelectionBadge>
+          );
+        })}
       </div>
       <p className={classes["long-desc"]}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer finibus
@@ -32,8 +56,8 @@ const ProductForm = () => {
         <AddToCartQuantityInput />
 
         <AddToCartButton />
+        <AddToFavouritesButton />
       </div>
-      <AddToFavouritesButton />
     </div>
   );
 };

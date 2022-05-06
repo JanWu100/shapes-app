@@ -1,0 +1,25 @@
+.color {
+    
+    border-radius: 25px;
+    border: 2px solid hsla(0, 47%, 52%, 0.5);
+    color: hsla(0, 47%, 52%, 0.5); 
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+    text-align: center;
+    font-weight: 500;
+    margin: .2rem .2rem 0 0;
+    cursor: pointer;
+    background-color: white;
+    
+}
+.color:hover {
+    font-weight: 700;
+    border-color: hsla(0, 47%, 52%, 1);
+    color: hsla(0, 47%, 52%, 1);
+}
+
+.selected {
+    font-weight: 700;
+    border-color: hsla(0, 47%, 52%, 1);
+    color: hsla(0, 47%, 52%, 1);
+}
